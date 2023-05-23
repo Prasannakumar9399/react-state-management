@@ -1,0 +1,53 @@
+**Core Concepts of Redux :-
+
+(1)Store :- Holds state of your application.
+
+(2)Action :- Describe the changes in the state of application.
+
+(3)Reducer :- Actually carries out the state transition depending on the action.
+
+Example Book Shop
+
+Shop ===========> Shopkeeper ==========> Customer
+(Store)            (Reducer)              (action)
+
+**Rules of Redux :-
+
+(1)The state of your application is stored in an object tree within a single store.
+
+{
+    NumberofBooks : 10
+}
+
+(2)Only way to change the state is to emit an action, an object describing what happened.
+
+{Type:"buyCake"}
+
+(3)To specify how the state tree is transformed by actions, we write pure reducer.
+
+*** Installing redux on react application.
+
+
+
+**Redux Store:-
+
+(1)getState() method give access to state it holds.
+
+(2)dispatch(action) method alow state to be updated.
+
+(3)It has subscribe(listener) method as well by which we can register listeners.
+
+**React Redux + Hooks
+
+*React Redux offers set of hooks to subscribe to redux store and dispatch actions.
+
+(1)useSelector Hook :-
+useSelector is a hook react-redux library provides to get hold of any state that  is maintained in the redux store.
+
+
+(2)useDispatch() Hook
+
+useDispatch Hook returns a reference to the dispatch function from the Redux Store.
+You may use it to dispatch actions as needed.
+
+Syntax - const dispatch = useDispatch()
