@@ -1,0 +1,90 @@
+==>Redux :-
+
+A Complex State management tool, with a single store as centralize data store.
+
+==>Reducers :-
+
+Manage the state and returns the newly updated state.
+
+==>Actions :-
+
+Actions have 2 properties type : which is a unique identifier and payload which has data.
+
+==>Dispatch :-
+
+Dispatch is used to send actions to update the data.
+
+Install two package for using redux in react.
+
+(1)npm install redux react-redux
+
+(2)After this we need to create Store which will have all the states information.
+
+import {createStore} from 'redux;
+
+const reducerFn = (state = { counter: 10 }, action) => { 
+    return state;
+}
+
+const store = createStore();
+
+
+(3)Add provider so that it store can share in app level by all the components.
+
+import { Provider } from 'react-redux';
+
+root.render(
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
+);
+
+(4)Now Finally  we use useSelector hook 
+
+In React, useSelector is a hook provided by the React Redux library, which is used for accessing the Redux store state in functional components. It allows you to extract specific data from the Redux store, so your component can subscribe to changes in that data and re-render when necessary.
+
+  const counter  = useSelector((state)=>state.counter);
+
+      <h3>Counter App - {counter}</h3>
+
+(5)Now we have manage the store but for updation we need to use dispatch function.
+<button onClick={increment}>Increment</button>&nbsp;
+<button onClick={decrement}>Decrement</button>
+<button onClick={addBy}>Add By</button>
+
+const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch({ type: "INC" })
+  }
+
+  const decrement = () => {
+    dispatch({ type: "DEC" })
+  }
+
+  const addBy = () => {
+    dispatch({ type: "ADD", payload: 10 })
+  }
+
+  changes in reducer function
+
+  const reducerFn = (state = { counter: 10 }, action) => {
+
+    /* 2 rule for reducer
+    (a) It should always contains synchronous code.
+    (b)We should not mutate the original state. 
+    */
+    if (action.type == "INC") {
+        return { counter: state.counter + 1 };
+    }
+    else if (action.type == "DEC") {
+        return { counter: state.counter - 1 };
+
+    }
+    else if (action.type == "ADD")
+        return { counter: state.counter + action.payload };
+
+    return state;
+}
