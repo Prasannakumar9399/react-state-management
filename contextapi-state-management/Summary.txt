@@ -1,0 +1,9 @@
+Three terminology used in context api 
+(1)Create (2)Provider (3)Consumer
+
+(1)Create Context api.
+import {createContext} from 'react';
+const data = createContext();
+
+
+
