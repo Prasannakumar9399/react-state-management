@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+button{
+  padding: 1rem 1.5rem;
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: sans-serif,monospace;
+  border-radius: 8px;
+}
+button:hover{
+  background-color: rgb(180, 178, 178);
+}
