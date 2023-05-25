@@ -26,7 +26,7 @@ const reducerFn = (state = { counter: 10 }, action) => {
     return state;
 }
 
-const store = createStore();
+const store = createStore(reducerFns);
 
 
 (3)Add provider so that it store can share in app level by all the components.

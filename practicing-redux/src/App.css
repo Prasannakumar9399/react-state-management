@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap:4rem ;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+button {
+  padding: 1rem 1.25rem;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+button:hover {
+  background-color: green;
+  color: white;
+  /* animation: slidedown 1s forwards; */
+
+}
+
+.common{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+input{
+  border-radius: 6px;
+  border: 1px solid grey;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+}
+
+@keyframes slidedown {
+  0%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(-20px);
+
+  }
+}
