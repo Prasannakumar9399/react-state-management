@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import './App.css';
+import * as actions from './reduxContainer/Action';
 
 function App() {
   const name = useSelector((state) => state.name);
@@ -32,42 +33,49 @@ function App() {
   const dispatch = useDispatch()
 
   const getName = () => {
-    dispatch({ type: "getName" });
+    dispatch(actions.getName());
     alert("Name is : " + name);
   }
 
   const getAge = () => {
-    dispatch({ type: "getAge" });
+    // dispatch({ type: "getAge" });
+    dispatch(actions.getAge());
     alert("Age is : " + age);
 
   }
 
   const getGender = () => {
-    dispatch({ type: "getGender" });
+    // dispatch({ type: "getGender" });
+    dispatch(actions.getGender());
     alert("Gender is : " + gender);
 
   }
 
   const getDesignation = () => {
-    dispatch({ type: "getDesignation" });
+    // dispatch({ type: "getDesignation" });
+    dispatch(actions.getDesignation());
     alert("Designation is :" + designation);
 
   }
 
   const setName = () => {
-    dispatch({ type: "setName", updatedName: tempName })
+    // dispatch({ type: "setName", updatedName: tempName });
+    dispatch(actions.setName(tempName));
   }
 
   const setAge = () => {
-    dispatch({ type: "setAge", updateAge: tempAge });
+    // dispatch({ type: "setAge", updateAge: tempAge });
+    dispatch(actions.setAge(tempAge));
   }
 
   const setGender = () => {
-    dispatch({ type: "setGender", updateGender: tempGender });
+    // dispatch({ type: "setGender", updateGender: tempGender });
+    dispatch(actions.setGender(tempGender));
   }
 
   const setDesignation = () => {
-    dispatch({ type: "setDesignation", updateDesignation: tempDesignation });
+    // dispatch({ type: "setDesignation", updateDesignation: tempDesignation });
+    dispatch(actions.setDesignation(tempDesignation));
   }
 
   return (
