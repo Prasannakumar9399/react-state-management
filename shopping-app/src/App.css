@@ -1,0 +1,16 @@
+*{
+  /* margin: 1rem ; */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+
+}
+body{
+    margin: 1rem;
+}
+
+.App {
+  text-align: center;
+}
+.main-container{
+  position: absolute;
+  top: 120px;}

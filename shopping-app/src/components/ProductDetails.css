@@ -1,0 +1,9 @@
+/* .main-container {
+    position: absolute;
+    top: 101px;
+} */
+
+.card .image {
+    display: flex !important;
+
+}
