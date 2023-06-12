@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { selectedProduct, removeSelectedProduct } from "../redux/actions/productAction";
+import { selectedProduct, removeSelectedProduct, fetchProduct } from "../redux/actions/productAction";
 import { useSelector } from "react-redux";
 import './ProductDetails.css';
 
@@ -16,17 +16,17 @@ const ProductDetails = () => {
     console.log(product);
 
 
-    const fetchProdutDetail = async () => {
+    // const fetchProdutDetail = async () => {
 
-        const response = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch((err) => {
-            console.log(err);
-        });
+    //     const response = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch((err) => {
+    //         console.log(err);
+    //     });
 
-        dispatch(selectedProduct(response.data));
-    }
-
+    //     dispatch(selectedProduct(response.data));
+    // }
+//return function 
     useEffect(() => {
-        if (productId && productId !== "") fetchProdutDetail()
+        if (productId && productId !== "") dispatch(fetchProduct(productId))
         return () => {
             dispatch(removeSelectedProduct())
         }
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             {Object.keys(product).length === 0 ? (
                 <div className="main-container">...Loading</div>
             ) : (
-                <div className="ui placeholder segment">
+                <div className="ui placeholder segment m-5">
                     <div className="ui two column stackable center aligned grid">
                         <div className="ui vertical divider">AND</div>
                         <div className="middle aligned row">

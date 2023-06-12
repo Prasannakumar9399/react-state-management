@@ -1,0 +1,20 @@
+For Interacting with redux store we call dispatch function
+
+    dispatch(setProducts(response.data));
+
+    Now this dispatch function we go to action creator and which return object with type and payload,etc. And then redux store will manage or update the 
+    state by reducer function based on action type.
+
+
+Redux Thunk :-
+============= 
+
+Redux Thunk is a middleware for Redux that allows you to write action creators that return functions instead of plain objects. This provides you with additional flexibility and capabilities when handling asynchronous operations in your Redux application.
+
+In the code you provided, the action creator setProducts simply returns a plain object. This is suitable for synchronous actions where you have the data available immediately.
+
+However, in many cases, you may need to perform asynchronous operations such as API calls, fetching data from a server, or handling complex asynchronous logic. Redux Thunk allows you to handle such scenarios by enabling your action creators to return functions instead of objects.
+
+By using Redux Thunk, you can write action creators that have access to the dispatch function and can dispatch multiple actions, perform asynchronous operations, and handle complex logic before dispatching the final action. This is particularly useful when you need to make API requests, wait for the response, and then dispatch an action with the retrieved data.
+
+In summary, Redux Thunk provides a convenient way to handle asynchronous operations within your Redux actions. It gives you more control and flexibility when dealing with asynchronous logic and helps to separate concerns by keeping your data-fetching and state-updating logic within the action creators.
